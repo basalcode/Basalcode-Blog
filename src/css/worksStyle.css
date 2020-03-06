@@ -1,3 +1,9 @@
+img {
+    display:block;
+    margin:2% auto;
+}
+
+
 .body {
     margin-top: 10px;
     margin-bottom: 10px;
