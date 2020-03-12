@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>BasalCode's Blog - Main Page</title>
-        <link rel="stylesheet" href="./src/css/commonStyle.css">
-        <link rel="stylesheet" href="./src/css/indexStyle.css">
+        <link rel="stylesheet" href="./src/css/common.css">
+        <link rel="stylesheet" href="./src/css/index.css">
     </head>
     <body class="body">
         <div class="top">
@@ -44,9 +44,14 @@
         </main>
 
         <footer class=footer>
-            <h2>Contact Information</h2>
-            
+            <header>
+                <h2>Contact Information</h2>
+            </header>
+            <footer id=options>
+                <input type="button" value="Dark Mode" onclick="brightnessHandler(this)">
+            </footer>
         </footer>
-        
+        <script src="./src/js/common.js"></script>
+        <script src="./src/js/index.js"></script>
     </body>
 </html>

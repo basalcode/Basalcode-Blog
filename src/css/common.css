@@ -42,7 +42,7 @@ main {
 }
 
 .mainImage {
-    width:600px;
+    width:80%;
     height:40%;
     margin:0px auto;
 }
@@ -96,11 +96,5 @@ main section article {
     .nav-items a{
         margin-left:20px;
         margin-right:20px;
-    }
-}
-
-@media only screen and (max-width:768px) {
-    .mainImage {
-        width:95%;
     }
 }
