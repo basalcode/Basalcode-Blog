@@ -54,12 +54,6 @@ section {
 }
 
 @media only screen and (max-width:766px) {
-    .mainImage {
-        width:100%;
-        height:40%;
-        margin:0px auto;
-    }
-
     .works-content {
         border:1px solid gray;
         border-radius:2%;
