@@ -3,8 +3,8 @@
     background-size:cover;
     background-position:center center;
 
-    width:80%;
-    height:500px;
+    width:600px;
+    height:400px;
 
     margin:auto;
 
@@ -32,6 +32,13 @@
     margin-top:10px;
     margin-left:40px;
     margin-right:40px;
+}
+
+@media only screen and (max-width:720px) {
+    .top {
+        width:80%;
+        height:300px;
+    }
 }
 
 section {
