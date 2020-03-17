@@ -1,18 +1,23 @@
 window.onload = function() {
-    var paragraphList = document.querySelectorAll("p");
-    var articleList = [];
-    articleList.push("Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatem temporibus repellat magni vel possimus!");
-    articleList.push("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, sapiente libero! At et non quibusdam.");
-    articleList.push("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt laudantium alias cupiditate vel, et praesentium.");
+    var pElementList = document.querySelectorAll("p");
+    var textList = [];
+    textList.push("Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatem temporibus repellat magni vel possimus!");
+    textList.push("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae, sapiente libero! At et non quibusdam.");
+    textList.push("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt laudantium alias cupiditate vel, et praesentium.");
 
-    for (var i = 0; i < paragraphList.length; i++) {
+    for (var i = 0; i < pElementList.length; i++) {
         var textNode = document.createTextNode('');
-        writeArticle(articleList.shift(), paragraphList[i].appendChild(textNode));
+        writeText(textList.shift(), pElementList[i].appendChild(textNode));
     }
 }
 
-function writeArticle(text, target) {
-    for (var i = 0; i < text.length; i++) {
-        target.appendData(text[i]);
-    }
+var indexNumber = 0;
+function writeText(text, target) {
+    setInterval(typeOneLetter(text, target, indexNumber), 200);
+}
+
+function typeOneLetter(text, target, index) {
+    console.log("text");
+    target.appendData(text[index]);
+    indexNumber++;
 }
