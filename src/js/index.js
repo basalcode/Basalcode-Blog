@@ -6,18 +6,25 @@ window.onload = function() {
     textList.push("Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt laudantium alias cupiditate vel, et praesentium.");
 
     for (var i = 0; i < pElementList.length; i++) {
+        var text = textList.shift(); 
+        var pTextField = document.createTextNode('');
+        pElementList[i].appendChild(pTextField);
+        var target = pElementList[i].firstChild;
+        
+        for (var j = 0; j < text.length; j++) {
+            window.setTimeout(
+                writeText(target, text[j]),
+                10000
+            );
+        }
+    }
+
+    for (var i = 0; i < pElementList.length; i++) {
         var textNode = document.createTextNode('');
         writeText(textList.shift(), pElementList[i].appendChild(textNode));
     }
 }
 
-var indexNumber = 0;
-function writeText(text, target) {
-    setInterval(typeOneLetter(text, target, indexNumber), 200);
-}
-
-function typeOneLetter(text, target, index) {
-    console.log("text");
-    target.appendData(text[index]);
-    indexNumber++;
+function writeText(target, text) {
+    target.appendData(text);
 }
