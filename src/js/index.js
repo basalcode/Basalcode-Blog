@@ -14,7 +14,14 @@ window.onload = async function() {
         
         // Iterate every word to write on the target, <p>.
         for (var j = 0; j < text.length; j++) {
-            await writeText(target, text[j], 50);
+            if (text[j] ===' ' && Math.random() * 5 < 1) {
+                var waitOnSpace = Math.random() * 200 + 200;
+                console.log('test');
+                await writeText(target, text[j], waitOnSpace);
+            }
+            else {
+                await writeText(target, text[j], 50);
+            }
         }
     }
 
