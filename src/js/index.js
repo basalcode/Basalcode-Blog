@@ -1,4 +1,4 @@
-window.onload = async function() {
+window.onload = function() {
     var pElementList = document.querySelectorAll("p");
     var textList = [];
     textList.push("Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae voluptatem temporibus repellat magni vel possimus!");
@@ -12,11 +12,15 @@ window.onload = async function() {
         pElementList[i].appendChild(pTextField);
         var target = pElementList[i].firstChild;
         
+        wirteOnElement(target);
+    }
+
+    // Take charge of animation for target element.
+    async function wirteOnElement(target) {
         // Iterate every word to write on the target, <p>.
         for (var j = 0; j < text.length; j++) {
             if (text[j] ===' ' && Math.random() * 5 < 1) {
-                var waitOnSpace = Math.random() * 200 + 200;
-                console.log('test');
+                var waitOnSpace = Math.random() * 500 + 500;
                 await writeText(target, text[j], waitOnSpace);
             }
             else {
@@ -31,7 +35,7 @@ window.onload = async function() {
             window.setTimeout(function() {
                 target.appendData(text);
                 resolve();
-            }, ms);
+            }, ms); 
         });
     }
 }

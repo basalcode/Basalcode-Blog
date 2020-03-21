@@ -12,11 +12,15 @@ window.onload = async function() {
         pElementList[i].appendChild(pTextField);
         var target = pElementList[i].firstChild;
         
+        wirteOnElement(target);
+    }
+
+    // Take charge of animation for target element.
+    async function wirteOnElement(target) {
         // Iterate every word to write on the target, <p>.
         for (var j = 0; j < text.length; j++) {
             if (text[j] ===' ' && Math.random() * 5 < 1) {
-                var waitOnSpace = Math.random() * 200 + 200;
-                console.log('test');
+                var waitOnSpace = Math.random() * 500 + 500;
                 await writeText(target, text[j], waitOnSpace);
             }
             else {
