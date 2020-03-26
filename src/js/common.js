@@ -1,4 +1,17 @@
 window.onload = function() {
+    var pElement = document.querySelectorAll('p');
+    var articleElement = doucment.querySelectorAll('artice');
+    var changeDegree = 50;
+
+    for (var i = 0; i < articleElement; i++) {
+        articleElement[i].style.position = 'relative';
+    }
+    for (var i = 0; i < pElement.length; i++) {
+        pElement[i].style.position = 'absolute';
+        pELement[i].style.top = "1px";
+        pElement[i].style.backgroundColor = 'red';
+    }
+
     var textField = document.querySelectorAll(".text-field");
     var caretField = document.querySelectorAll(".caret");
     var textList = callTextList();
