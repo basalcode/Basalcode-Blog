@@ -1,15 +1,16 @@
 window.onload = function() {
     var pElement = document.querySelectorAll('p');
-    var articleElement = doucment.querySelectorAll('artice');
     var changeDegree = 50;
-
-    for (var i = 0; i < articleElement; i++) {
-        articleElement[i].style.position = 'relative';
-    }
+    // var articleElement = doucment.querySelectorAll('artice');
     for (var i = 0; i < pElement.length; i++) {
-        pElement[i].style.position = 'absolute';
-        pELement[i].style.top = "1px";
+        pElement[i].style.position = 'relative';
         pElement[i].style.backgroundColor = 'red';
+        //pElement[i].style.transition = ;
+        for (var j = 0; j < changeDegree; j++) {
+            window.setTimeout(function() {
+                pElement[i].style.top = (- changeDegree + j) + 'px'
+            }, 50);
+        }
     }
 
     var textField = document.querySelectorAll(".text-field");
