@@ -1,16 +1,7 @@
 window.onload = function() {
-    var pElement = document.querySelectorAll('p');
-    var changeDegree = 50;
-    // var articleElement = doucment.querySelectorAll('artice');
+    var pElement = document.querySelectorAll('article');
     for (var i = 0; i < pElement.length; i++) {
-        pElement[i].style.position = 'relative';
-        pElement[i].style.backgroundColor = 'red';
-        //pElement[i].style.transition = ;
-        for (var j = 0; j < changeDegree; j++) {
-            window.setTimeout(function() {
-                pElement[i].style.top = (- changeDegree + j) + 'px'
-            }, 50);
-        }
+        pElement[i].style.top = 0 + 'px';
     }
 
     var textField = document.querySelectorAll(".text-field");
