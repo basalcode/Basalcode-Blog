@@ -25,7 +25,8 @@ main section article {
 
     position: relative;
     top: -50px;
-    transition:top 1s;
+    filter:opacity(0%);
+    transition:top 1s, opacity 1.5s;
 }
 
 .footer {

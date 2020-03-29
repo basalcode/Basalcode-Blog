@@ -1,9 +1,23 @@
 window.onload = function() {
-    var pElement = document.querySelectorAll('article');
-    for (var i = 0; i < pElement.length; i++) {
-        pElement[i].style.top = 0 + 'px';
-    }
+    textboxDropAnimation();
+    textWritingAnimation();
+}
 
+function textboxDropAnimation() {
+    var pElement = document.querySelectorAll('article');
+    var i = 0;
+    var interval = window.setInterval(function() {
+        if (i < pElement.length) {
+            pElement[i].style.filter = 'opacity(100%)';
+            pElement[i].style.top = 0 + 'px';
+        } else {
+            clearInterval(interval);
+        }
+        i++;
+    }, 800);
+}
+
+function textWritingAnimation() {
     var textField = document.querySelectorAll(".text-field");
     var caretField = document.querySelectorAll(".caret");
     var textList = callTextList();
