@@ -1,8 +1,23 @@
 window.onload = function() {
+    rainbowColorAnchor();
     textboxDropAnimation();
     textWritingAnimation();
 }
 
+function rainbowColorAnchor() {
+    var aElement = document.querySelectorAll('a');
+    for (var i = 0 ; i < aElement.length; i++) {
+        aElement[i].addEventListener('mouseover', function(event) {
+        
+        });
+        aElement[i].addEventListener('mouseout', function(event) {
+
+        });
+    }
+        
+}
+
+// Conduct dropping textbox animation in sequence.
 function textboxDropAnimation() {
     var pElement = document.querySelectorAll('article');
     var i = 0;
@@ -17,6 +32,7 @@ function textboxDropAnimation() {
     }, 800);
 }
 
+// Conduct textWriting animation with caret which general text editor has.
 function textWritingAnimation() {
     var textField = document.querySelectorAll(".text-field");
     var caretField = document.querySelectorAll(".caret");
