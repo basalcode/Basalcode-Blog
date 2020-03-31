@@ -1,21 +1,35 @@
 window.onload = function() {
-    rainbowColorAnchor();
+    anchorObj.initEvent();
     textboxDropAnimation();
     textWritingAnimation();
 }
 
-function rainbowColorAnchor() {
-    var aElement = document.querySelectorAll('a');
-    for (var i = 0 ; i < aElement.length; i++) {
-        aElement[i].addEventListener('mouseover', function(event) {
-        
-        });
-        aElement[i].addEventListener('mouseout', function(event) {
+var anchorObj = {
+    eventStop : null,
+    initEvent : function () {
+        var aElement = document.querySelectorAll('a');
+        for (var i = 0 ; i < aElement.length; i++) {
+            aElement[i].addEventListener('mouseenter', this.rainbowColorOn(event)); 
+            aElement[i].addEventListener('mouseout', this.rainbowColorOff(event));
+        }
+    },
 
-        });
+    rainbowColorOn : function (event) {
+        var colorValue = 0;
+        this.eventStop = window.setInterval(function() {
+            target.style.color = 'blue'; //hsl(' + colorValue + ', 100%, 50%)';
+            colorValue = (colorValue + 30) % 360;
+        }, 500)
+    },
+
+    rainbowColorOff : function (event) {
+        clearInterval(this.eventStop);
     }
-        
 }
+
+
+
+
 
 // Conduct dropping textbox animation in sequence.
 function textboxDropAnimation() {
