@@ -6,28 +6,28 @@ window.onload = function() {
 
 var anchorObj = {
     eventStop : null,
+    colorValue : 0,
     initEvent : function () {
-        var aElement = document.querySelectorAll('a');
+        var aElement = document.querySelectorAll('a')
         for (var i = 0 ; i < aElement.length; i++) {
-            aElement[i].addEventListener('mouseenter', this.rainbowColorOn(event)); 
-            aElement[i].addEventListener('mouseout', this.rainbowColorOff(event));
+            aElement[i].addEventListener('mouseenter', this.rainbowColorOn); 
+            aElement[i].addEventListener('mouseout', this.rainbowColorOff);
         }
     },
 
-    rainbowColorOn : function (event) {
-        var colorValue = 0;
+    rainbowColorOn : function(anchor) {
         this.eventStop = window.setInterval(function() {
-            target.style.color = 'blue'; //hsl(' + colorValue + ', 100%, 50%)';
-            colorValue = (colorValue + 30) % 360;
-        }, 500)
+            anchor.target.style.color = 'hsl(' + anchorObj.colorValue + ', 100%, 50%)';
+            anchorObj.colorValue = (anchorObj.colorValue + 10) % 360;
+        }, 30)
     },
-
-    rainbowColorOff : function (event) {
+    
+    rainbowColorOff : function(anchor) {
+        anchorObj.colorValue = 0;
+        anchor.target.style.color = 'black';
         clearInterval(this.eventStop);
     }
 }
-
-
 
 
 
@@ -99,7 +99,7 @@ function textWritingAnimation() {
             window.setTimeout(function() {
                 writePos.appendData(text);
                 resolve();
-            }, ms); 
+            }, ms);
         });
     }
 }
